@@ -1,0 +1,23 @@
+<md-toolbar [color]="primary">
+  <span>My Application Title</span>
+</md-toolbar>
+
+
+<md-sidenav-layout style="background-color: rgb(204,145,236);">
+  <!-- Choose one -->
+  <md-toolbar color="primary" (click)="start.open()">News Category</md-toolbar>
+  <button md-raised-button color="accent">News Category</button>
+  
+  <md-sidenav #start (open)="mybutton.focus()">
+    This is Side Nav
+    <br>
+    <!-- List of category goes here -->
+    <button md-button #mybutton (click)="start.close()">Close</button>
+  </md-sidenav>
+  
+</md-sidenav-layout>
+
+<button md-raised-button color="primary">PRIMARY</button>
+<button md-raised-button color="accent">ACCENT</button>
+<button md-raised-button color="warn">WARN</button>
+
