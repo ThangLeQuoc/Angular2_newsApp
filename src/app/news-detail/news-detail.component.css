@@ -1,3 +1,6 @@
-#article-detail {
-    
+article {
+    width: 58%;
+    float: right;
+    background-color: dodgerblue;    
+    padding-top:8px;
 }

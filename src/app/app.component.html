@@ -1,45 +1,26 @@
-<md-toolbar color="primary">
-  <button md-icon-button (click)="start.toggle()">
+<md-sidenav-layout>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="start.toggle()">
     <md-icon class="md-24">menu</md-icon>
   </button>
 
-  <span id="header-title"> Dogular | Latest News reach you, before your dogs do</span>
+    <span id="header-title"> Dogular | Latest News reach you, before your dogs do</span>
 
-</md-toolbar>
-
-
-<md-sidenav-layout style="background-color: rgb(204,145,236);">
+  </md-toolbar>
   <!-- Site Navigation Panel -->
   <md-sidenav class="md-sidenav-left" #start mode="over">
-    <div id="sidenav-header">Category</div>
+    <md-toolbar color="primary">
+      <span>Angular Material</span>
+    </md-toolbar>
     <!-- List of category goes here -->
-    <app-home></app-home>
+    <app-sidenav></app-sidenav>
   </md-sidenav>
 
-  <md-grid-list cols="10">
-    <!-- List of article goes here -->
-    <md-grid-tile id='article-panel' [colspan]="4" [style.background]="'#7986CB'">
-      <app-news></app-news>
-    </md-grid-tile>
-    <!-- End of article panel-->
+  <!-- List of article goes here -->
+  <app-news></app-news>
+  <!-- End of article -->
 
-<!-- Article Detail panel goes here -->
-    <md-grid-tile id='article-detail' [colspan]="6" [style.background]="'#B2EBF2'">
-      <app-news-detail></app-news-detail>
-    </md-grid-tile>
-    <!-- End of Panel  -->
-  </md-grid-list>
-
+  <!-- List of article detail goes here -->
+  <app-news-detail></app-news-detail>
+  <!--  End of article detail -->
 </md-sidenav-layout>
-
-
-
-
-<!-- 
-
-    1. Fetch News shit !
-
-
-
-
-  -->

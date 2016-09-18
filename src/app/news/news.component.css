@@ -1,2 +1,29 @@
-#news-panel{
+.article-image{
+    width: 130px;
+    height: 130px;
+    align-self: center;
+    position: absolute;
+    margin-left: 28.6%;
 }
+.article-image::hover{
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+#news-panel{
+    width: 40%;
+    height: 100%;
+    float:left;
+}
+
+.article-title{
+    height: 160px;
+    width: 69%;
+    word-wrap: break-word;
+}
+
+.article-author{
+    position:absolute;
+    margin-top: 8%;
+    margin-left: 0%;
+}
+
+
