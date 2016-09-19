@@ -11,19 +11,20 @@ import { MdIconModule, MdIconRegistry } from '@angular2-material/icon';
 import { MdListModule } from '@angular2-material/list';
 import { MdGridListModule } from '@angular2-material/grid-list';
 import { MdCardModule } from '@angular2-material/card';
-// Import Components
 
+
+// Import Components
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { NewsComponent } from './news/news.component';
 import { NewsDetailComponent } from './news-detail/news-detail.component';
 
-
 // Import Services
 import { NewsService } from './news/news.service';
 import { SidenavComponent } from './sidenav/sidenav.component';
 
-
+// routing config
+import { routing } from './app.routing';
 
 
 @NgModule({
@@ -37,7 +38,7 @@ import { SidenavComponent } from './sidenav/sidenav.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule, MdSidenavModule, MdButtonModule, MdToolbarModule, MdIconModule, MdListModule, MdGridListModule, MdCardModule
+    HttpModule, routing, MdSidenavModule, MdButtonModule, MdToolbarModule, MdIconModule, MdListModule, MdGridListModule, MdCardModule
   ],
   providers: [MdIconRegistry, NewsService],
   bootstrap: [AppComponent]

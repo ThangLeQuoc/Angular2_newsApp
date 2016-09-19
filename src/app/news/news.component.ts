@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
 
 import { ArticleHolder } from './article-holder';
 import { NewsService } from './news.service';
@@ -11,25 +12,22 @@ import { NewsService } from './news.service';
   providers: [NewsService]
 })
 export class NewsComponent implements OnInit {
-
-  // create ArticleHolder object
-  
-  //articleHolder = new ArticleHolder;
-  
-  // This shit not work 
   articleHolder: ArticleHolder;
   
-  constructor(private newsService: NewsService) {
+  constructor(private newsService: NewsService,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    this.getBusinessArticles();
-
+    //get the params meter
+    this.route.params.forEach((params: Params) => {
+      let category = params['category'];
+      this.newsService.getbyCategory(category).then(ArticleHolder => this.articleHolder = ArticleHolder);
+    });
   }
   // Category List 
-
-  getBusinessArticles(): void {
-    this.newsService.getbyCategory('business').then(ArticleHolder => {
+  getbyCategory(Category: string): void{
+    this.newsService.getbyCategory(Category).then(ArticleHolder => {
       this.articleHolder = ArticleHolder;
     });
   }
