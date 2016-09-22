@@ -21,4 +21,9 @@ md-sidenav {
     height: 100%;
 }
 
+.category-icon{
+    position: absolute;
+    margin-left: 78%;
+}
+
 

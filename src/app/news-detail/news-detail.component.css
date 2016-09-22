@@ -1,6 +1,11 @@
 article {
     width: 58%;
+    height: 100%;
     float: right;
-    background-color: dodgerblue;    
-    padding-top:8px;
+    padding-top: 8px;
+
+}
+
+.article-detail{
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }

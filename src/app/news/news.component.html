@@ -4,24 +4,9 @@
     <md-list>
       <md-list-item *ngFor="let article of articleHolder.articles" class="news-panel" (click)="alert(article.author)">
         <h3 class="article-title"> {{article.title}} </h3>
-        <p class="article-author">By: {{article.author}}</p>
+        <p class="time">By: {{getTime(article.publishedAt)}}</p>
         <img src="{{article.urlToImage}}" alt="" class="article-image">
       </md-list-item>
     </md-list>
   </div>
 </div>
-<!-- Back up Card Mode -->
-<!-- 
-
-<div id="news-panel">
-  <md-card *ngFor="let article of articleHolder.articles">
-    <md-card-title-group>
-      <img md-card-sm-image src="{{article.urlToImage}}">
-      <md-card-title>{{article.title}}</md-card-title>
-      <md-card-subtitle>By: {{article.author}}</md-card-subtitle>
-    </md-card-title-group>
-  </md-card>
-</div>
-
-
--->

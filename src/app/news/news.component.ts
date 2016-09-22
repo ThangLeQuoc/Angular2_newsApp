@@ -32,6 +32,13 @@ export class NewsComponent implements OnInit {
     });
   }
 
+  getTime(Timestamp:string): string {
+    let time: string;
+
+    time = this.newsService.getTimeDistance(Timestamp);
+    return time;
+  }
+
   alert(ArticleAuthor: string): void{
     console.log("Kissed !");
   }

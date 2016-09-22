@@ -21,7 +21,6 @@ import { NewsDetailComponent } from './news-detail/news-detail.component';
 
 // Import Services
 import { NewsService } from './news/news.service';
-import { SidenavComponent } from './sidenav/sidenav.component';
 
 // routing config
 import { routing } from './app.routing';
@@ -32,8 +31,7 @@ import { routing } from './app.routing';
     AppComponent,
     HomeComponent,
     NewsComponent,
-    NewsDetailComponent,
-    SidenavComponent
+    NewsDetailComponent
   ],
   imports: [
     BrowserModule,
