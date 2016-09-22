@@ -10,9 +10,16 @@ import { Article } from '../news/news-article';
   templateUrl: './news-detail.component.html',
   styleUrls: ['./news-detail.component.css']
 })
-export class NewsDetailComponent{
+export class NewsDetailComponent implements OnInit {
+  
   @Input() article: Article;
-  constructor() { }
+  constructor(private newsService: NewsService,
+    private route: ActivatedRoute) { }
 
+  ngOnInit(): void {
+  }
 
+  explore(Url: string): void{
+    window.open(Url);
+  }
 }
