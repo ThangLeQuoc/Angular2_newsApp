@@ -1,7 +1,8 @@
-import { ModuleWithProviders }  from '@angular/core';
+import { ModuleWithProviders } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 import { NewsComponent } from './news/news.component';
+import { NewsDetailComponent } from './news-detail/news-detail.component';
 import { AppComponent } from './app.component';
 const appRoutes: Routes = [
     {
@@ -13,6 +14,11 @@ const appRoutes: Routes = [
         path: '',
         redirectTo: '/news/general',
         pathMatch: 'full'
+    },
+
+    {
+        path: 'news/:category/post/:index',
+        component: NewsDetailComponent
     }
 
 ];

@@ -2,11 +2,13 @@
 <div *ngIf="articleHolder">
   <div id="news-panel">
     <md-list>
-      <md-list-item *ngFor="let article of articleHolder.articles" class="news-panel" (click)="alert(article.author)">
+      <md-list-item *ngFor="let article of articleHolder.articles; let id = index" class="news-panel" (click)="selectArticle(article)">
         <h3 class="article-title"> {{article.title}} </h3>
-        <p class="time">By: {{getTime(article.publishedAt)}}</p>
+        <p class="time">{{getTime(article.publishedAt)}}</p>
         <img src="{{article.urlToImage}}" alt="" class="article-image">
       </md-list-item>
     </md-list>
   </div>
 </div>
+<app-news-detail [article] = "selectedArticle" ></app-news-detail>
+

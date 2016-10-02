@@ -42,10 +42,7 @@ export class NewsService {
                 break;
         }
         return this.http.get(sourceUrl).toPromise().then(response => response.json() as ArticleHolder).catch(this.handleError);
-
     }
-
-
 
     // Time Converting Methods ---------------------------- // 
     getTimeDistance(Post_TimeStamp: string): string {

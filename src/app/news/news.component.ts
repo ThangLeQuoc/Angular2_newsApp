@@ -1,9 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
+import { Router } from '@angular/router';
 
 import { ArticleHolder } from './article-holder';
+import { Article } from './news-article';
 import { NewsService } from './news.service';
-
 
 @Component({
   selector: 'app-news',
@@ -13,9 +14,11 @@ import { NewsService } from './news.service';
 })
 export class NewsComponent implements OnInit {
   articleHolder: ArticleHolder;
-  
+  selectedArticle : Article;
+
   constructor(private newsService: NewsService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute,
+              private router: Router) {
   }
 
   ngOnInit() {
@@ -25,6 +28,7 @@ export class NewsComponent implements OnInit {
       this.newsService.getbyCategory(category).then(ArticleHolder => this.articleHolder = ArticleHolder);
     });
   }
+
   // Category List 
   getbyCategory(Category: string): void{
     this.newsService.getbyCategory(Category).then(ArticleHolder => {
@@ -34,13 +38,30 @@ export class NewsComponent implements OnInit {
 
   getTime(Timestamp:string): string {
     let time: string;
-
     time = this.newsService.getTimeDistance(Timestamp);
     return time;
   }
 
-  alert(ArticleAuthor: string): void{
-    console.log("Kissed !");
+
+  gotoArticleDetail(article){
+    this.selectedArticle = article;
+    /*
+    // get the category from the url 
+    let category: string;
+    this.route.params.forEach((params: Params) => {
+      // get the category of the article and article number
+      category = params['category'];
+    });
+    
+    let link = ['/news', category, 'post', index];
+    console.log(link);
+    this.router.navigate(link);
+    */
+    
+  }
+
+  selectArticle(article){
+    this.selectedArticle = article;
   }
 
   // get more, do more....
