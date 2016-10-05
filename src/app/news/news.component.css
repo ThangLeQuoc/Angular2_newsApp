@@ -1,9 +1,7 @@
 .article-image{
-    width: 130px;
-    height: 130px;
+    height: 45%;
     align-self: center;
-    position: absolute;
-    margin-left: 28.6%;
+    position: relative;    
 }
 .article-image::hover{
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
@@ -12,14 +10,12 @@
     width: 70%;
     height: auto;
     margin: auto;
-   
     /*float:left;*/
 }
 
 .article-title{
-    height: 160px;
-    width: 69%;
-    word-wrap: break-word;
+
+    font-size: 19px;
 }
 
 .article-card{
@@ -27,6 +23,8 @@
     width: 30%;
     height: 50%;
     float: left;
+    margin-left: 2%;
+    margin-top: 2%;
 }
 
 .time{
@@ -45,6 +43,19 @@
     flex-wrap: wrap;
     align-items: flex-start;
     align-content: flex-start;
+    margin-bottom: 5%;
 }
 
+
+
+.article-description-container{
+    overflow: hidden;
+    height: 65px;
+}
+.article-description{
+    
+    display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+    }
 

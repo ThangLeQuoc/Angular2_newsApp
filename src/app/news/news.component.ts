@@ -27,7 +27,9 @@ export class NewsComponent implements OnInit {
     this.route.params.forEach((params: Params) => {
       let category = params['category'];
       this.newsService.getbyCategory(category).then(ArticleHolder => this.articleHolder = ArticleHolder);
+
     });
+
   }
 
   // Category List 
@@ -63,6 +65,7 @@ export class NewsComponent implements OnInit {
 
   selectArticle(article){
     this.selectedArticle = article;
+    
   }
 
   // get more, do more....

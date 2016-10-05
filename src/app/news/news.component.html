@@ -1,95 +1,24 @@
 <!-- List of Article goes here-->
-<div *ngIf="articleHolder" align="center" class="news-panel">
+<div *ngIf="articleHolder" align="left" class="news-panel">
   <h2>Category Title<span><input type="textbox" name="search" value="Search" placeholder="Search"/></span></h2>
   <section class="news-category-group">
     <!--  Using css flex box-->
     <!-- ngFor - fetch all article-->
-    
-    
-    
-    
-    
-    
-    
-    <article class="article-card">
+    <article class="article-card" *ngFor="let article of articleHolder.articles; let id = index" (click)="selectArticle(article)">
       <md-card>
-        <img md-card-image src="http://a.amz.mshcdn.com/media/ZgkyMDE2LzEwLzAzLzUwL0dldHR5SW1hZ2VzNjExOTcxMTY2LjgyY2Y4LmpwZwpwCXRodW1iCTEyMDB4NjMwCmUJanBn/ac9f799b/600/GettyImages-611971166.jpg">
+        <img class="article-image" md-card-image src="{{article.urlToImage}}">
         <md-card-content>
-          <p>DeSean Jackson wears police tape on his cleats to protest 'senseless killings</p>
-          <p class="time">{{getTime(article.publishedAt)}}</p>
+          <md-card-title><p class="article-title">{{article.title}}</p></md-card-title>
+          <md-card-subtitle>By: {{article.author}} <span><p>{{getTime(article.publishedAt)}}</p></span>
+          </md-card-subtitle>
+          <div class="article-description-container">
+            <p class="article-description">{{article.description}}</p>
+          </div>
+          
         </md-card-content>
       </md-card>
     </article>
-
-    <article class="article-card">
-      <md-card>
-        <img md-card-image src="http://a.amz.mshcdn.com/media/ZgkyMDE2LzEwLzAzLzUwL0dldHR5SW1hZ2VzNjExOTcxMTY2LjgyY2Y4LmpwZwpwCXRodW1iCTEyMDB4NjMwCmUJanBn/ac9f799b/600/GettyImages-611971166.jpg">
-        <md-card-content>
-          <p>DeSean Jackson wears police tape on his cleats to protest 'senseless killings</p>
-        </md-card-content>
-      </md-card>
-    </article>
-
-    <article class="article-card">
-      <md-card>
-        <img md-card-image src="http://a.amz.mshcdn.com/media/ZgkyMDE2LzEwLzAzLzUwL0dldHR5SW1hZ2VzNjExOTcxMTY2LjgyY2Y4LmpwZwpwCXRodW1iCTEyMDB4NjMwCmUJanBn/ac9f799b/600/GettyImages-611971166.jpg">
-        <md-card-content>
-          <p>DeSean Jackson wears police tape on his cleats to protest 'senseless killings</p>
-        </md-card-content>
-      </md-card>
-    </article>
-
-    <article class="article-card">
-      <md-card>
-        <img md-card-image src="http://a.amz.mshcdn.com/media/ZgkyMDE2LzEwLzAzLzUwL0dldHR5SW1hZ2VzNjExOTcxMTY2LjgyY2Y4LmpwZwpwCXRodW1iCTEyMDB4NjMwCmUJanBn/ac9f799b/600/GettyImages-611971166.jpg">
-        <md-card-content>
-          <p>DeSean Jackson wears police tape on his cleats to protest 'senseless killings</p>
-        </md-card-content>
-      </md-card>
-    </article>
-
-    <article class="article-card">
-      <md-card>
-        <img md-card-image src="http://a.amz.mshcdn.com/media/ZgkyMDE2LzEwLzAzLzUwL0dldHR5SW1hZ2VzNjExOTcxMTY2LjgyY2Y4LmpwZwpwCXRodW1iCTEyMDB4NjMwCmUJanBn/ac9f799b/600/GettyImages-611971166.jpg">
-        <md-card-content>
-          <p>DeSean Jackson wears police tape on his cleats to protest 'senseless killings</p>
-        </md-card-content>
-      </md-card>
-    </article>
-
-    <article class="article-card">
-      <md-card>
-        <img md-card-image src="http://a.amz.mshcdn.com/media/ZgkyMDE2LzEwLzAzLzUwL0dldHR5SW1hZ2VzNjExOTcxMTY2LjgyY2Y4LmpwZwpwCXRodW1iCTEyMDB4NjMwCmUJanBn/ac9f799b/600/GettyImages-611971166.jpg">
-        <md-card-content>
-          <p>DeSean Jackson wears police tape on his cleats to protest 'senseless killings</p>
-        </md-card-content>
-      </md-card>
-    </article>
-
-    
   </section>
 </div>
 
 <app-news-detail [article]="selectedArticle"></app-news-detail>
-
-
-
-<article class="article-detail" *ngIf="article">
-  <md-card style="width: 100%; height: 100%;">
-    <md-card-header>
-      <img md-card-avatar src="../assets/images/avatar/cat1.png">
-     
-     
-    </md-card-header>
-    <img md-card-image src="{{article.urlToImage}}">
-    <md-card-content>
-      <md-card-title>{{article.title}}</md-card-title>
-      <md-card-subtitle>By: {{article.author}} - <span></span></md-card-subtitle>
-      <p>{{article.description}}</p>
-    </md-card-content>
-    <md-card-actions>
-        <button md-button (click)="explore(article.url)">LEARN MORE</button>
-        <button md-button>SHARE</button>
-   </md-card-actions>
-  </md-card>
-</article>
