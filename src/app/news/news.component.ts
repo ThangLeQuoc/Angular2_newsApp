@@ -21,6 +21,7 @@ export class NewsComponent implements OnInit {
               private router: Router) {
   }
 
+
   ngOnInit() {
     //get the params meter
     this.route.params.forEach((params: Params) => {
