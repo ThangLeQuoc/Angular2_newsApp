@@ -15,17 +15,26 @@ import { CategoryService } from './news/category.service';
 export class AppComponent implements OnInit {
  
   // create Category List
-  catindex = 0;
+  selectedcat = 0;
   categories: Category[];
   constructor(private categoryService: CategoryService) { }
 
   // get category List
   getCategories(): void {
-    this.categoryService.getCategories().then(Category => this.categories = Category);
+    this.categoryService.getCategories().then
+    (Category => {
+      this.categories = Category;
+      
+      });
   }
 
   selectCategory(index: any): void {
-    this.catindex = index;
+    this.selectedcat = index;
+  }
+
+  getCategoryTheme(index: any): string{
+    let category = this.categories[index];
+    return category.colortheme;
   }
   ngOnInit() {
     this.getCategories();
