@@ -21,13 +21,13 @@ export class NewsComponent implements OnInit {
               private router: Router) {
   }
 
+  category: any;
 
   ngOnInit() {
     //get the params meter
     this.route.params.forEach((params: Params) => {
-      let category = params['category'];
-      this.newsService.getbyCategory(category).then(ArticleHolder => this.articleHolder = ArticleHolder);
-
+      this.category = params['category'];
+      this.newsService.getbyCategory(this.category).then(ArticleHolder => this.articleHolder = ArticleHolder);
     });
 
   }

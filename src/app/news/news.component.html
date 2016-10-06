@@ -1,6 +1,6 @@
 <!-- List of Article goes here-->
 <div *ngIf="articleHolder" align="left" class="news-panel">
-  <h2>Category Title<span><input type="textbox" name="search" value="Search" placeholder="Search"/></span></h2>
+  <h2>{{category}}<span><input type="textbox" name="search" value="Search" placeholder="Search"/></span></h2>
   <section class="news-category-group">
     <!--  Using css flex box-->
     <!-- ngFor - fetch all article-->
@@ -8,7 +8,11 @@
       <md-card>
         <img class="article-image" md-card-image src="{{article.urlToImage}}">
         <md-card-content>
-          <md-card-title><p class="article-title">{{article.title}}</p></md-card-title>
+          <md-card-title>
+            <div class="article-title-container">
+               <p class="article-title">{{article.title}}</p>
+            </div>
+            </md-card-title>
           <md-card-subtitle>By: {{article.author}} <span><p>{{getTime(article.publishedAt)}}</p></span>
           </md-card-subtitle>
           <div class="article-description-container">

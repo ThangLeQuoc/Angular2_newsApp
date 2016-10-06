@@ -16,7 +16,7 @@
     <!-- Category List -->
     <md-nav-list>
       <md-list-item *ngFor="let category of categories">
-        <a routerLink="/news/{{category.path}}">{{category.title}}</a>
+        <a routerLink="/news/{{category.path}}" >{{category.title}}</a>
         <md-icon class="category-icon">{{category.icon}}</md-icon>
       </md-list-item>
     </md-nav-list>

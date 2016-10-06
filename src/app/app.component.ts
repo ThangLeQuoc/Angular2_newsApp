@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HomeComponent } from './home/home.component';
 
-
 import { Category } from './news/category';
 import { CategoryService } from './news/category.service';
 // import Angular 2 Material Design Component
