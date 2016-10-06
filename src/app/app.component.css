@@ -27,9 +27,48 @@ md-sidenav {
 }
 
 .activecat a{
-    color: #1976D2;
     text-decoration: none;
     font-weight: bold;
+}
+
+.unactivecat a{
+    text-decoration: none;
+    font-weight: 450;
+    color: #616161;
+}
+
+
+/* Category Color List */
+.color-cyan {
+    color: #00bcd4;
+}
+
+.color-pink{
+    color: #AD1457;
+}
+
+.color-orange{
+    color: #FB8C00;
+}
+
+.color-indigo{
+    color: #3949AB;
+}
+
+.color-deeppurple{
+    color: #5E35B1;
+}
+
+.color-green{
+    color: #43A047;
+}
+
+.color-deeporange{
+    color: #F4511E;
+}
+
+.color-red{
+    color: #E53935;
 }
 
 

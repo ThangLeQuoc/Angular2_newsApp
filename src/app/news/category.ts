@@ -4,4 +4,5 @@ export class Category {
     icon: string;
     title: string;
     path: string;
+    colortheme: string;
 }
