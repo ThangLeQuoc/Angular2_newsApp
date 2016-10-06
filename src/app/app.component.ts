@@ -13,8 +13,9 @@ import { CategoryService } from './news/category.service';
   providers: [CategoryService]
 })
 export class AppComponent implements OnInit {
+ 
   // create Category List
-
+  catindex = 0;
   categories: Category[];
   constructor(private categoryService: CategoryService) { }
 
@@ -23,6 +24,9 @@ export class AppComponent implements OnInit {
     this.categoryService.getCategories().then(Category => this.categories = Category);
   }
 
+  selectCategory(index: any): void {
+    this.catindex = index;
+  }
   ngOnInit() {
     this.getCategories();
   }

@@ -15,8 +15,8 @@
     <!-- List of category goes here -->
     <!-- Category List -->
     <md-nav-list>
-      <md-list-item *ngFor="let category of categories">
-        <a routerLink="/news/{{category.path}}" >{{category.title}}</a>
+      <md-list-item *ngFor="let category of categories; let i = index" [class.activecat]="i === catindex">
+        <a routerLink="/news/{{category.path}}" (click)="selectCategory(i)">{{category.title}}</a>
         <md-icon class="category-icon">{{category.icon}}</md-icon>
       </md-list-item>
     </md-nav-list>
