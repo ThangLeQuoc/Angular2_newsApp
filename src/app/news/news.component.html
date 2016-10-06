@@ -1,14 +1,28 @@
 <!-- List of Article goes here-->
-<div *ngIf="articleHolder">
-  <div id="news-panel">
-    <md-list>
-      <md-list-item *ngFor="let article of articleHolder.articles; let id = index" class="news-panel" (click)="selectArticle(article)">
-        <h3 class="article-title"> {{article.title}} </h3>
-        <p class="time">{{getTime(article.publishedAt)}}</p>
-        <img src="{{article.urlToImage}}" alt="" class="article-image">
-      </md-list-item>
-    </md-list>
-  </div>
+<div *ngIf="articleHolder" align="left" class="news-panel">
+  <h2>{{category}}<span><input type="textbox" name="search" value="Search" placeholder="Search"/></span></h2>
+  <section class="news-category-group">
+    <!--  Using css flex box-->
+    <!-- ngFor - fetch all article-->
+    <article class="article-card" *ngFor="let article of articleHolder.articles; let id = index" (click)="selectArticle(article)">
+      <md-card>
+        <img class="article-image" md-card-image src="{{article.urlToImage}}">
+        <md-card-content>
+          <md-card-title>
+            <div class="article-title-container">
+               <p class="article-title">{{article.title}}</p>
+            </div>
+            </md-card-title>
+          <md-card-subtitle>By: {{article.author}} <span><p>{{getTime(article.publishedAt)}}</p></span>
+          </md-card-subtitle>
+          <div class="article-description-container">
+            <p class="article-description">{{article.description}}</p>
+          </div>
+          
+        </md-card-content>
+      </md-card>
+    </article>
+  </section>
 </div>
-<app-news-detail [article] = "selectedArticle" ></app-news-detail>
 
+<app-news-detail [article]="selectedArticle"></app-news-detail>

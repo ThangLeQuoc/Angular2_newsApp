@@ -26,4 +26,10 @@ md-sidenav {
     margin-left: 78%;
 }
 
+.activecat a{
+    color: #1976D2;
+    text-decoration: none;
+    font-weight: bold;
+}
+
 

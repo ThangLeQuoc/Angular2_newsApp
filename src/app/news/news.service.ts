@@ -15,7 +15,7 @@ export class NewsService {
         var sourceUrl = '';
         switch (Category) {
             case 'general':
-                sourceUrl = 'https://newsapi.org/v1/articles?source=cnn&sortBy=top&apiKey=b1a9eb71513f43d49c154dd48427a833';
+                sourceUrl = 'https://newsapi.org/v1/articles?source=associated-press&sortBy=top&apiKey=b1a9eb71513f43d49c154dd48427a833';
                 break;
             case 'business':
                 sourceUrl = 'https://newsapi.org/v1/articles?source=bloomberg&sortBy=top&apiKey=b1a9eb71513f43d49c154dd48427a833';
