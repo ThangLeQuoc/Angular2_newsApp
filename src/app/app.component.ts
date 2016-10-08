@@ -13,7 +13,7 @@ import { CategoryService } from './news/category.service';
   providers: [CategoryService]
 })
 export class AppComponent implements OnInit {
- 
+
   // create Category List
   selectedcat = 0;
   categories: Category[];
@@ -24,7 +24,7 @@ export class AppComponent implements OnInit {
     this.categoryService.getCategories().then
     (Category => {
       this.categories = Category;
-      
+
       });
   }
 
