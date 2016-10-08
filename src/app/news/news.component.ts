@@ -15,6 +15,7 @@ import { NewsService } from './news.service';
 export class NewsComponent implements OnInit {
   articleHolder: ArticleHolder;
   selectedArticle : Article;
+  isHidden: boolean = false;
 
   constructor(private newsService: NewsService,
               private route: ActivatedRoute,
@@ -32,7 +33,7 @@ export class NewsComponent implements OnInit {
 
   }
 
-  // Category List 
+  // Category List
   getbyCategory(Category: string): void{
     this.newsService.getbyCategory(Category).then(ArticleHolder => {
       this.articleHolder = ArticleHolder;
@@ -49,23 +50,23 @@ export class NewsComponent implements OnInit {
   gotoArticleDetail(article){
     this.selectedArticle = article;
     /*
-    // get the category from the url 
+    // get the category from the url
     let category: string;
     this.route.params.forEach((params: Params) => {
       // get the category of the article and article number
       category = params['category'];
     });
-    
+
     let link = ['/news', category, 'post', index];
     console.log(link);
     this.router.navigate(link);
     */
-    
+
   }
 
   selectArticle(article){
     this.selectedArticle = article;
-    
+    this.isHidden = true;
   }
 
   // get more, do more....

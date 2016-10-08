@@ -24,6 +24,11 @@ import { NewsService } from './news/news.service';
 
 // routing config
 import { routing } from './app.routing';
+import {CommentBoxComponent} from "./news-detail/comment-box/comment-box.component";
+import {CommentComponent} from "./news-detail/comment-box/comment-list/comment/comment.component";
+import {CommentListComponent} from "./news-detail/comment-box/comment-list/comment-list.component";
+import {CommentFormComponent} from "./news-detail/comment-box/comment-form/comment-form.component";
+import {MdInput, MdInputModule} from "@angular2-material/input";
 
 
 @NgModule({
@@ -31,12 +36,17 @@ import { routing } from './app.routing';
     AppComponent,
     HomeComponent,
     NewsComponent,
-    NewsDetailComponent
+    NewsDetailComponent,
+    CommentBoxComponent,
+    CommentFormComponent,
+    CommentListComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule, routing, MdSidenavModule, MdButtonModule, MdToolbarModule, MdIconModule, MdListModule, MdGridListModule, MdCardModule
+    HttpModule, routing, MdSidenavModule, MdButtonModule, MdToolbarModule, MdIconModule, MdListModule, MdGridListModule, MdCardModule,
+    MdInputModule
   ],
   providers: [MdIconRegistry, NewsService],
   bootstrap: [AppComponent]

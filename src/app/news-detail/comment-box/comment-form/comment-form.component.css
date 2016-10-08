@@ -1,0 +1,17 @@
+.comment-form-container {
+  margin: 20px 0;
+  display: flex; }
+  .comment-form-container .comment-card-form {
+    display: inline-block;
+    width: 100%;
+    height: 100%; }
+    .comment-form-container .comment-card-form md-input {
+      width: 100%; }
+    .comment-form-container .comment-card-form button {
+      padding: 0;
+      color: #00796B;
+      float: right; }
+    .comment-form-container .comment-card-form .header {
+      text-align: left; }
+
+/*# sourceMappingURL=comment-form.component.css.map */

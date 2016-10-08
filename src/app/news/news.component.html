@@ -1,5 +1,5 @@
 <!-- List of Article goes here-->
-<div *ngIf="articleHolder" align="left" class="news-panel">
+<div [hidden]="isHidden" *ngIf="articleHolder" align="left" class="news-panel">
   <h2>{{category}}<span><input type="textbox" name="search" value="Search" placeholder="Search"/></span></h2>
   <section class="news-category-group">
     <!--  Using css flex box-->
@@ -18,7 +18,7 @@
           <div class="article-description-container">
             <p class="article-description">{{article.description}}</p>
           </div>
-          
+
         </md-card-content>
       </md-card>
     </article>
