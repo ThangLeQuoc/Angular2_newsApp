@@ -1,0 +1,19 @@
+<div class="comment-form-container">
+  <md-card class="comment-card-form">
+    <md-card-content>
+      <p class="header">Leave your comment here!</p>
+      <form #loginForm="ngForm" (ngSubmit)="onAddComment()">
+        <md-input placeholder="Description"
+                  type="text"
+                  id="description"
+                  name="description"
+                  [(ngModel)]="comment.content"
+                  required
+        >
+        </md-input>
+        <br>
+        <button md-button type="submit">Send</button>
+      </form>
+    </md-card-content>
+  </md-card>
+</div>

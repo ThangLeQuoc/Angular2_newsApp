@@ -1,8 +1,8 @@
-<md-sidenav-layout>
+<md-sidenav-layout [class]="theme==''? 'pink-theme' : theme">
   <md-toolbar color="primary">
     <button md-icon-button (click)="start.toggle()">
-    <md-icon class="md-24">menu</md-icon>
-  </button>
+      <md-icon class="md-24">menu</md-icon>
+    </button>
 
     <span id="header-title"> Dogular | Latest News reach you, before your dogs do</span>
 
@@ -15,15 +15,22 @@
     <!-- List of category goes here -->
     <!-- Category List -->
     <md-nav-list>
-      <md-list-item *ngFor="let category of categories; let i = index" [class.activecat]="i === selectedcat" [class.unactivecat]="i !== selectedcat" >
-        <a routerLink="/news/{{category.path}}" (click)="selectCategory(i); start.close()" class="{{getCategoryTheme(i)}}"  >{{category.title}}</a>
+      <md-list-item *ngFor="let category of categories; let i = index"
+                    [class.activecat]="i === selectedcat"
+                    [class.unactivecat]="i !== selectedcat"
+      >
+        <a routerLink="/news/{{category.path}}"
+           (click)="selectCategory(i); start.close()"
+           class="{{getCategoryTheme(i)}}"
+        >
+          {{category.title}}
+        </a>
         <md-icon class="category-icon">{{category.icon}}</md-icon>
       </md-list-item>
     </md-nav-list>
   </md-sidenav>
 
   <router-outlet></router-outlet>
-  
 </md-sidenav-layout>
 
 <!-- My shit note

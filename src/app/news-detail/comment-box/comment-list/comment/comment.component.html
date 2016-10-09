@@ -1,0 +1,14 @@
+<md-list *ngIf="comments" class="comment">
+  <div *ngFor="let comment of comments.reverse()">
+    <md-list-item>
+      <md-icon md-list-avatar class="avatar">account_circle</md-icon>
+      <p md-line>
+        <span class="author">{{comment.author}}</span>
+        <span class="created_at demo-2">{{comment.created_at | date:'medium'}}</span>
+      </p>
+      <p md-line>{{comment.content}}</p>
+    </md-list-item>
+    <md-divider class="comment-divider"></md-divider>
+  </div>
+</md-list>
+
