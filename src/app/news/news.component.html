@@ -1,10 +1,10 @@
 <!-- List of Article goes here-->
-<div [hidden]="isHidden" *ngIf="articleHolder" align="left" class="news-panel">
+<div [hidden]="isHidden" *ngIf="articles" align="left" class="news-panel">
   <h2>{{category}}<span><input type="textbox" name="search" value="Search" placeholder="Search"/></span></h2>
   <section class="news-category-group">
     <!--  Using css flex box-->
     <!-- ngFor - fetch all article-->
-    <article class="article-card" *ngFor="let article of articleHolder.articles; let id = index" (click)="selectArticle(article)">
+    <article class="article-card" *ngFor="let article of articles; let id = index" (click)="selectArticle(article)">
       <md-card>
         <img class="article-image" md-card-image src="{{article.urlToImage}}">
         <md-card-content>

@@ -2,12 +2,13 @@ import {Component, OnInit} from '@angular/core';
 
 import {Category} from './news/category';
 import {CategoryService} from './news/category.service';
+import {AppService} from "./app.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['app.component.scss'],
-  providers: [CategoryService]
+  providers: [CategoryService, AppService]
 })
 
 
@@ -24,7 +25,7 @@ export class AppComponent implements OnInit {
   selectedcat = 0;
   categories: Category[];
 
-  constructor(private categoryService: CategoryService) {
+  constructor(private categoryService: CategoryService, private _appService: AppService) {
 
   }
 
@@ -51,6 +52,7 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this._appService.fetchUrl();
     this.getCategories();
   }
 }
